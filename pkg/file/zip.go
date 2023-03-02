@@ -8,6 +8,7 @@ import (
 	"io"
 	"io/fs"
 	"path/filepath"
+	"strings"
 
 	"github.com/stashapp/stash/pkg/logger"
 	"github.com/stashapp/stash/pkg/models"
@@ -82,6 +83,13 @@ func newZipFS(fs models.FS, path string, size int64) (*zipFS, error) {
 				}
 				// Comments are not decoded cuz stash doesn't use that
 			}
+		}
+	}
+
+	for _, f := range zipReader.File {
+		// TODO: zip breaks videos, ignore them for now
+		if strings.HasSuffix(f.Name, ".mp4") {
+			f.Name = f.Name + ".ignore"
 		}
 	}
 
