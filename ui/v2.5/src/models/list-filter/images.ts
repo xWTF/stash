@@ -25,7 +25,7 @@ import { PhashCriterionOption } from "./criteria/phash";
 import { CustomFieldsCriterionOption } from "./criteria/custom-fields";
 import { FolderCriterionOption } from "./criteria/folder";
 
-const defaultSortBy = "path";
+const defaultSortBy = "title";
 
 const sortByOptions = [
   "filesize",
