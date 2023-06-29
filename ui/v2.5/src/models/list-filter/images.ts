@@ -23,7 +23,7 @@ import { ListFilterOptions, MediaSortByOptions } from "./filter-options";
 import { DisplayMode } from "./types";
 import { GalleriesCriterionOption } from "./criteria/galleries";
 
-const defaultSortBy = "path";
+const defaultSortBy = "title";
 
 const sortByOptions = ["filesize", "file_count", "date", ...MediaSortByOptions]
   .map(ListFilterOptions.createSortBy)
