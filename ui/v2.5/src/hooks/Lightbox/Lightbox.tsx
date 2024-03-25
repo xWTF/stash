@@ -781,7 +781,7 @@ export const LightboxComponent: React.FC<IProps> = ({
 
     return (
       <>
-        <div className={CLASSNAME_HEADER}>
+        <div className={CLASSNAME_HEADER} style={isFullscreen ? { zIndex: 2000, position: 'absolute', width: '100%' } : undefined}>
           <div className={CLASSNAME_LEFT_SPACER}>{renderChapterMenu()}</div>
           <div className={CLASSNAME_INDICATOR}>
             <span>
@@ -948,7 +948,7 @@ export const LightboxComponent: React.FC<IProps> = ({
             </Button>
           </div>
         )}
-        <div className={CLASSNAME_FOOTER}>
+        <div className={CLASSNAME_FOOTER} style={isFullscreen ? { zIndex: 2000, position: 'absolute', width: '100%', bottom: 0 } : undefined}>
           <div className={CLASSNAME_FOOTER_LEFT}>
             {currentImage?.id !== undefined && (
               <>
