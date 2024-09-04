@@ -113,7 +113,7 @@ func Initialize() (*Server, error) {
 			// when http/2 is enabled, we are unable to hijack and close
 			// the connection/request. This is necessary to stop running
 			// streams when deleting a scene file.
-			TLSNextProto: make(map[string]func(*http.Server, *tls.Conn, http.Handler)),
+			// TLSNextProto: make(map[string]func(*http.Server, *tls.Conn, http.Handler)),
 		},
 		displayAddress: displayAddress,
 		manager:        mgr,
